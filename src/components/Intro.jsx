@@ -7,7 +7,7 @@ const Intro = () => {
   const [text] = useTypewriter({
     words: [
       'Hello, I am Devanshu.', 
-      'I am a Full-Stack Developer.', 
+      'I am a Front-end developer.', 
       'I turn ideas into reality.',
       '<And I love building cool things />'
     ],

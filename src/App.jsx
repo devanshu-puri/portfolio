@@ -4,10 +4,11 @@ import React, { useRef, useLayoutEffect } from 'react';
 import useSmoothScroll from './useSmoothScroll';
 import Navbar from './components/Navbar';
 import Scene3D from './components/Scene3D';
-import Intro from './components/Intro'; // Import our new Intro component
+import Intro from './components/Intro';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import Skiper31 from './components/Skiper31';  // 👈 Added
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -40,22 +41,32 @@ function App() {
     <div ref={appRef}>
       <Navbar />
 
-      {/* Layer 1: The 3D Canvas (fixed in the background) */}
+      {/* Layer 1: 3D Canvas (fixed in background) */}
       <div className="fixed top-0 left-0 w-full h-screen z-0">
         <Scene3D skullRef={skullRef} />
       </div>
 
-      {/* Layer 2: The Scrollable HTML Content (on top) */}
+      {/* Layer 2: Scrollable HTML Content (on top) */}
       <div className="relative z-10 scroll-container">
-        
-        {/* THE CHANGE IS HERE: Replaced the spacer div with our new Intro component */}
         <Intro />
 
-        {/* The container for all your scrolling sections */}
         <div className="bg-background/80 backdrop-blur-md">
-          <section id="skills"><Skills /></section>
-          <section id="projects"><Projects /></section>
-          <section id="contact"><Contact /></section>
+          <section id="skills">
+            <Skills />
+          </section>
+
+          {/* 👇 NEW: Skiper31 scroll animation section */}
+          <section id="scroll-showcase">
+            <Skiper31 />
+          </section>
+
+          <section id="projects">
+            <Projects />
+          </section>
+
+          <section id="contact">
+            <Contact />
+          </section>
         </div>
       </div>
     </div>
