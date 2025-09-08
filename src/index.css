@@ -1,0 +1,143 @@
+/* File: src/index.css */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Define our custom color properties. This part is correct.
+*/
+@theme {
+  --color-background: #000000;
+  --color-primary: #ffffff;
+  --color-cyan: #00ffff;
+  --color-magenta: #ff00ff;
+  --color-purple: #9400d3;
+}
+
+@layer base {
+  body {
+    /* We apply the working Tailwind utilities... */
+    @apply bg-cyan text-background antialiased;
+    
+    /* ...AND we apply the font directly using standard CSS.
+      This bypasses the 'font-mono' utility problem completely.
+    */
+    font-family: "Fira Code", monospace;
+  }
+}
+
+/*
+  This layer is for all our custom component styles.
+*/
+@layer components {
+  /* Style for the magenta "pill" buttons in the navbar */
+  .nav-button {
+    @apply bg-magenta text-primary px-5 py-2 rounded-lg border-2 border-primary
+           font-bold cursor-pointer transition-all duration-300
+           hover:scale-105 hover:shadow-[0_0_15px_var(--color-magenta)];
+  }
+
+  /* Container for the text that curves around the skull */
+  .curved-text-container {
+    @apply absolute w-[350px] h-[350px] md:w-[450px] md:h-[450px] 
+           text-primary text-6xl md:text-8xl font-bold uppercase;
+    animation: spin 30s linear infinite;
+  }
+
+  /* Style for each individual character in the curved text */
+  .curved-char {
+    @apply absolute left-1/2 top-0;
+    transform-origin: bottom center;
+    transform: translateX(-50%) rotate(calc(var(--char-index) * 25deg - 90deg)) translateY(-1em);
+    text-shadow: 0 0 5px var(--color-primary);
+  }
+
+  /* Styles for the Skills section cards */
+  .skill-card {
+    @apply bg-background/50 border border-cyan/20 rounded-lg p-6 text-center
+           transition-all duration-300 ease-in-out cursor-pointer backdrop-blur-sm;
+  }
+
+  .skill-card:hover {
+    @apply transform -translate-y-2;
+    box-shadow: 0 0 5px var(--color-cyan),
+                0 0 15px var(--color-cyan),
+                0 0 25px var(--color-cyan);
+  }
+}
+/* File: src/index.css */
+/* ... (add this at the end of the @layer components block) ... */
+
+/* The Halo Effect */
+.halo {
+  /* THE CHANGE IS HERE: Increased width and height to match the skull */
+  @apply absolute w-72 h-72 md:w-96 md:h-96;
+  
+  /* ... (the rest of the halo styles remain the same) ... */
+  border: 6px solid theme(colors.primary);
+  border-radius: 50%;
+  box-shadow: 0 0 20px theme(colors.primary), 
+              inset 0 0 20px theme(colors.primary);
+  transform: translateY(-40%) rotateX(70deg);
+  animation: spin-halo 10s linear infinite;
+  transform-style: preserve-d;
+}
+
+
+/* The keyframes for the simple, horizontal spin */
+@keyframes spin-halo {
+  from {
+    transform: translateY(-40%) rotateX(70deg) rotateZ(0deg);
+  }
+  to {
+    transform: translateY(-40%) rotateX(70deg) rotateZ(360deg);
+  }
+}
+/* File: src/index.css */
+/* ... (add this at the end of the file) ... */
+
+/* This makes sure our content scrolls properly */
+.scroll-container {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.nav-button {
+  @apply bg-magenta text-primary px-5 py-2 rounded-full /* Changed to rounded-full */
+         border-2 border-primary font-bold cursor-pointer 
+         transition-all duration-300
+         hover:scale-105 hover:shadow-[0_0_15px_theme(colors.magenta)];
+}
+
+/* ADD THIS NEW CLASS for the text links inside the middle container */
+.nav-link {
+  @apply text-primary font-bold transition-transform duration-300 hover:scale-110;
+}
+.section-title {
+  @apply text-4xl md:text-5xl font-bold text-cyan text-center;
+}
+
+/* Styles for the contact form inputs */
+.form-input {
+  @apply bg-background/50 border-2 border-magenta/50 rounded-md p-4 
+         text-primary font-mono placeholder:text-primary/50
+         focus:outline-none focus:border-cyan transition-colors;
+}
+
+/* The Glitch Button Effect */
+.glitch-button {
+  @apply relative inline-block px-5 py-3 font-bold text-lg bg-magenta text-primary
+         border-2 border-primary rounded-lg cursor-pointer;
+  text-shadow: 0.05em 0 0 rgba(255,0,255,0.75), -0.025em -0.05em 0 rgba(0,255,255,0.75);
+  animation: glitch-animation 1s infinite;
+}
+
+@keyframes glitch-animation {
+  0% { transform: translate(0); }
+  20% { transform: translate(-0.1em, 0.1em); }
+  40% { transform: translate(-0.1em, -0.1em); }
+  60% { transform: translate(0.1em, 0.1em); }
+  80% { transform: translate(0.1em, -0.1em); }
+  100% { transform: translate(0); }
+}
