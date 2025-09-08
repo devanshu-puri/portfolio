@@ -18,7 +18,7 @@ const Skills = () => (
   // THE CHANGE IS HERE: Removed the gradient background classes
   <section
     id="skills"
-    className="relative py-32 px-6 md:px-12"
+    className="relative py-32 px-6 md/px-12"
   >
     <div className="max-w-7xl mx-auto text-center">
       {/* ... (rest of the component is unchanged) ... */}

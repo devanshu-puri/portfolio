@@ -1,7 +1,7 @@
 // File: src/components/Projects.jsx
 
 import React from 'react';
-import CrowdAnimation from './CrowdAnimation';
+import PeepsAnimation from './PeepsAnimation'; // 1. Import our NEW animation component
 import { motion } from 'framer-motion';
 
 const projectsData = [
@@ -37,13 +37,11 @@ const projectsData = [
 
 const Projects = () => {
   return (
-    // THE CHANGE IS HERE: Removed the gradient background classes
     <section 
       id="projects"
       className="relative py-32 px-6 md:px-12"
     >
       <div className="max-w-7xl mx-auto text-center">
-        {/* ... (rest of the component is unchanged) ... */}
         <h2
           className="text-5xl md:text-6xl font-extrabold text-primary mb-16 
                      transition-all duration-300 hover:text-cyan 
@@ -54,24 +52,16 @@ const Projects = () => {
         <div className="grid md:grid-cols-2 gap-10">
           {projectsData.map((proj, idx) => (
             <motion.a
-              key={idx}
-              href={proj.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.15, duration: 0.6 }}
-              viewport={{ once: true }}
+              key={idx} href={proj.link} target="_blank" rel="noopener noreferrer"
+              initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: idx * 0.15, duration: 0.6 }} viewport={{ once: true }}
               className="group relative block rounded-2xl overflow-hidden bg-background/50 
                          border border-magenta/30 shadow-xl hover:border-magenta
                          hover:shadow-[0_0_32px_theme(colors.magenta)] 
                          transition-all duration-300 text-left transform hover:-translate-y-2"
             >
-              <img 
-                src={proj.imageUrl} 
-                alt={`Preview of ${proj.title}`}
-                className="w-full h-56 object-cover object-top transition-transform duration-500 group-hover:scale-110"
-              />
+              <img src={proj.imageUrl} alt={`Preview of ${proj.title}`}
+                className="w-full h-56 object-cover object-top transition-transform duration-500 group-hover:scale-110" />
               <div className="p-6">
                 <h3 className="text-2xl font-bold text-primary group-hover:text-magenta transition">
                   {proj.title}
@@ -79,10 +69,7 @@ const Projects = () => {
                 <p className="mt-2 text-primary/70">{proj.description}</p>
                 <div className="mt-4 flex flex-wrap gap-2">
                   {proj.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="px-3 py-1 text-xs rounded-full bg-primary/10 text-magenta"
-                    >
+                    <span key={i} className="px-3 py-1 text-xs rounded-full bg-primary/10 text-magenta">
                       {t}
                     </span>
                   ))}
@@ -93,8 +80,9 @@ const Projects = () => {
         </div>
       </div>
       
+      {/* 2. Using our NEW, working animation component */}
       <div className="relative w-full h-48 mt-24">
-        <CrowdAnimation />
+        <PeepsAnimation />
       </div>
     </section>
   );

@@ -1,79 +1,37 @@
 // File: src/App.jsx
 
-import React, { useRef, useLayoutEffect } from 'react';
-import useSmoothScroll from './useSmoothScroll';
-import Navbar from './components/Navbar';
-import Scene3D from './components/Scene3D';
-import Intro from './components/Intro';
-import Skills from './components/Skills';
-import Projects from './components/Projects';
-import Contact from './components/Contact';
-import Skiper31 from './components/Skiper31'; 
-
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
-gsap.registerPlugin(ScrollTrigger);
+import React, { useState } from 'react';
+import LoadingScreen from './components/LoadingScreen';
+import Terminal from './components/Terminal';
+import MainSite from './components/MainSite'; // This is your old App component
 
 function App() {
-  useSmoothScroll();
-  const skullRef = useRef(null);
-  const appRef = useRef();
+  // This state controls which part of the experience is visible
+  const [appState, setAppState] = useState('LOADING');
 
-  useLayoutEffect(() => {
-    const ctx = gsap.context(() => {
-      ScrollTrigger.create({
-        trigger: ".scroll-container",
-        start: "top top",
-        end: "bottom bottom",
-        scrub: 1,
-        onUpdate: (self) => {
-          if (skullRef.current) {
-            skullRef.current.position.y = -self.progress * 4.5;
-            skullRef.current.rotation.y = -0.5 + self.progress * 2 * Math.PI;
-          }
-        },
-      });
-    }, appRef);
-    return () => ctx.revert();
-  }, []);
+  const handleLoadingComplete = () => {
+    setAppState('TERMINAL');
+  };
 
-  return (
-    <div ref={appRef}>
-      <Navbar />
+  const handleStartCommand = () => {
+    setAppState('STARTED');
+  };
+  
+  // Conditionally render the correct component based on the current state
+  if (appState === 'LOADING') {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
+  
+  if (appState === 'TERMINAL') {
+    // You will also need to create Terminal.jsx with your code
+    return <Terminal onStart={handleStartCommand} />;
+  }
+  
+  if (appState === 'STARTED') {
+    return <MainSite />;
+  }
 
-      {/* Layer 1: 3D Canvas (fixed in background) */}
-      <div className="fixed top-0 left-0 w-full h-screen z-0">
-        <Scene3D skullRef={skullRef} />
-      </div>
-
-      {/* Layer 2: Scrollable HTML Content (on top) */}
-      <div className="relative z-10 scroll-container">
-        <Intro />
-
-        {/* THE FIX IS HERE: Added 'backdrop-blur-md' back to this class */}
-        <div className="bg-background/80 backdrop-blur-md">
-          <section id="skills">
-            <Skills />
-          </section>
-
-          {/* This is your other component, which we are keeping */}
-          <section id="scroll-showcase">
-            <Skiper31 />
-          </section>
-
-          {/* The Projects component now contains the crowd animation */}
-          <section id="projects">
-            <Projects />
-          </section>
-          
-          <section id="contact">
-            <Contact />
-          </section>
-        </div>
-      </div>
-    </div>
-  );
+  return null; 
 }
 
 export default App;

@@ -99,9 +99,10 @@
 
 /* This makes sure our content scrolls properly */
 .scroll-container {
-  width: 100%;
+   @apply relative w-full overflow-y-auto overflow-x-hidden;
+  /* width: 100%;
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: hidden; */
 }
 .nav-button {
   @apply bg-magenta text-primary px-5 py-2 rounded-full /* Changed to rounded-full */
