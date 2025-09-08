@@ -1,28 +1,74 @@
 // File: src/components/Navbar.jsx
 
-import React from 'react';
+import React, { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="fixed top-0 left-0 w-full p-4 md:p-6 flex justify-between items-center z-20">
-      
-      {/* Logo using your dev.svg file from the public folder */}
-      <a href="#home" className="cursor-pointer">
-        <img 
-          src="/dev.svg" 
-          alt="Dev Logo" 
-          className="h-10 w-auto transition-transform duration-300 hover:scale-110" 
-        />
-      </a>
-      
-      <div className="hidden md:flex items-center gap-4">
-        <a href="#skills" className="nav-button">Skills</a>
-        <a href="#projects" className="nav-button">Projects</a>
-        <a href="#contact" className="nav-button">Contact</a>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white/20 backdrop-blur-lg shadow-md">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center py-4">
+        {/* Left: Logo */}
+        <a href="#home" className="cursor-pointer flex items-center">
+          <img
+            src="/dev2.png"
+            alt="Dev Logo"
+            className="h-12 lg:h-14 xl:h-16 w-auto transition-transform duration-300 hover:scale-110"
+          />
+        </a>
+
+        {/* Center: Intro, Skills, Projects */}
+        <div className="hidden md:flex items-center gap-10">
+          {["Intro", "Skills", "Projects"].map((item) => (
+            <a
+              key={item}
+              href={`#${item.toLowerCase()}`}
+              className="relative text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800 font-medium transition-colors duration-300 hover:text-blue-600 
+              after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* Right: Contact */}
+        <div className="hidden md:flex items-center">
+          <a
+            href="#contact"
+            className="relative text-base md:text-lg lg:text-xl xl:text-2xl text-gray-800 font-medium transition-colors duration-300 hover:text-blue-600 
+            after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-blue-600 after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact
+          </a>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden p-2 rounded-lg hover:bg-gray-200 transition"
+          onClick={() => setIsOpen(!isOpen)}
+        >
+          {isOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
       </div>
 
-      {/* A placeholder for the mobile menu button */}
-      <div className="nav-button md:hidden">Menu</div>
+      {/* Mobile Drawer Menu */}
+      {isOpen && (
+        <div className="md:hidden bg-white/90 backdrop-blur-lg shadow-lg">
+          <div className="flex flex-col items-center gap-4 py-6">
+            {["Intro", "Skills", "Projects", "Contact"].map((item) => (
+              <a
+                key={item}
+                href={`#${item.toLowerCase()}`}
+                onClick={() => setIsOpen(false)}
+                className="text-lg font-semibold transition-colors duration-300 hover:text-blue-600"
+              >
+                {item}
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

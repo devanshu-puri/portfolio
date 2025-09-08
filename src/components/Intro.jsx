@@ -18,23 +18,21 @@ const Intro = () => {
   });
 
   return (
-    // 3. REPOSITION: Changed from 'justify-center' to 'justify-start' and added padding-top
-    // to push the content down from the top, effectively placing it higher than the center.
-    <section className="h-screen flex flex-col items-center justify-start pt-48 md:pt-64 text-center">
+    <section className="h-screen flex flex-col items-center justify-start pt-48 md:pt-64 text-center px-6">
       
-      {/* 1. HEADING SIZE: Increased from md:text-6xl to md:text-7xl */}
-      <h1 className="text-5xl md:text-7xl font-bold">
+      {/* Heading with larger scaling */}
+      <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">
         <span className="text-cyan">&gt; </span>
-        
-        {/* 2. TEXT COLOR: Added 'text-primary' to make the typing text white */}
         <span className="text-primary">{text}</span>
-        
         <Cursor cursorStyle='_' />
       </h1>
       
-      {/* 1. SUBHEADING SIZE: Increased from md:text-xl to md:text-2xl and made it wider */}
-      <p className="text-xl md:text-2xl mt-6 text-primary/80 max-w-3xl">
-        Welcome to my digital space. I specialize in creating modern, responsive, and performant web applications.
+      {/* Subheading with larger scaling + highlight */}
+      <p className="relative inline-block text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-6 text-primary/90 max-w-5xl leading-relaxed">
+        <span className="relative z-10">
+          Welcome to my digital space. I specialize in creating modern, responsive, and performant web applications.
+        </span>
+        <span className="absolute inset-0 bg-[#fd3db5]/50 -z-10 rounded-md"></span>
       </p>
     </section>
   );

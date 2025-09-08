@@ -141,3 +141,13 @@
   80% { transform: translate(0.1em, -0.1em); }
   100% { transform: translate(0); }
 }
+/* File: src/index.css */
+.scene-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* don’t block clicks */
+  z-index: 10; /* above background, below navbar/cards */
+}
