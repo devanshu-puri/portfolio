@@ -8,7 +8,8 @@ import Intro from './components/Intro';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import Skiper31 from './components/Skiper31';  // 👈 Added
+import Skiper31 from './components/Skiper31'; 
+
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -50,20 +51,22 @@ function App() {
       <div className="relative z-10 scroll-container">
         <Intro />
 
+        {/* THE FIX IS HERE: Added 'backdrop-blur-md' back to this class */}
         <div className="bg-background/80 backdrop-blur-md">
           <section id="skills">
             <Skills />
           </section>
 
-          {/* 👇 NEW: Skiper31 scroll animation section */}
+          {/* This is your other component, which we are keeping */}
           <section id="scroll-showcase">
             <Skiper31 />
           </section>
 
+          {/* The Projects component now contains the crowd animation */}
           <section id="projects">
             <Projects />
           </section>
-
+          
           <section id="contact">
             <Contact />
           </section>

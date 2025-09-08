@@ -1,67 +1,60 @@
 // File: src/components/Skills.jsx
+
 import React from "react";
 import { motion } from "framer-motion";
 
-const skills = [
-  { name: "HTML", level: 100 },
-  { name: "CSS", level: 80 },
-  { name: "JavaScript", level: 75 },
-  { name: "Tailwind", level: 40 },
-  { name: "React", level: 20 },
-  { name: "Node.js", level: 20 },
-  { name: "Express", level: 20 },
-  { name: "Figma", level: 25 },
+const skillsData = [
+  { name: "React", level: 90 },
+  { name: "JavaScript (ES6+)", level: 95 },
+  { name: "Node.js & Express", level: 80 },
+  { name: "Tailwind CSS", level: 98 },
+  { name: "GSAP & Framer Motion", level: 85 },
+  { name: "Three.js / R3F", level: 70 },
+  { name: "MongoDB", level: 85 },
+  { name: "Figma", level: 90 },
 ];
 
 const Skills = () => (
+  // THE CHANGE IS HERE: Removed the gradient background classes
   <section
     id="skills"
-    className="relative py-32 px-6 md:px-12 bg-gradient-to-b from-cyan-900 via-cyan-800 to-fuchsia-900"
+    className="relative py-32 px-6 md:px-12"
   >
     <div className="max-w-7xl mx-auto text-center">
-      {/* Heading */}
+      {/* ... (rest of the component is unchanged) ... */}
       <h2
-        className="text-5xl md:text-6xl font-extrabold text-white mb-8 
-                   transition-all duration-300 hover:text-fuchsia-400 
-                   hover:drop-shadow-[0_0_20px_rgba(168,85,247,0.9)]"
+        className="text-5xl md:text-6xl font-extrabold text-primary mb-8 
+                   transition-all duration-300 hover:text-magenta 
+                   hover:drop-shadow-[0_0_20px_theme(colors.magenta)]"
       >
-        My <span className="text-cyan-300">Skills</span>
+        My <span className="text-cyan">Skills</span> Matrix
       </h2>
-
-      {/* Subtitle */}
-     <p
-  className="text-white mb-20 max-w-4xl mx-auto text-2xl md:text-3xl leading-relaxed
-             transition-all duration-300 hover:text-fuchsia-400 
-             hover:drop-shadow-[0_0_15px_rgba(168,85,247,0.8)]"
->
-  A blend of front-end & back-end skills with design knowledge. Always
-  learning, always improving.
-</p>
-
-      {/* Skills Grid */}
-      <div className="grid md:grid-cols-2 gap-10">
-        {skills.map((s, i) => (
+      <p className="text-primary/70 mb-20 max-w-4xl mx-auto text-xl md:text-2xl leading-relaxed">
+        A blend of design, frontend, and backend technologies. Always learning, always building.
+      </p>
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {skillsData.map((skill, i) => (
           <motion.div
-            key={s.name}
+            key={skill.name}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: i * 0.1, duration: 0.6 }}
             viewport={{ once: true }}
-            className="bg-white/10 backdrop-blur-md border border-cyan-400
-                       text-white rounded-2xl p-8 md:p-10 shadow-lg 
-                       hover:shadow-[0_0_25px_8px_rgba(168,85,247,0.9)] 
-                       transition transform hover:scale-105"
+            className="bg-background/50 backdrop-blur-md border border-cyan/30
+                       text-primary rounded-2xl p-6 shadow-lg 
+                       hover:shadow-[0_0_25px_8px_theme(colors.cyan)] 
+                       transition-all duration-300 transform hover:-translate-y-2"
           >
-            <div className="flex justify-between mb-4">
-              <h3 className="text-xl md:text-2xl font-semibold">{s.name}</h3>
-              <span className="text-lg font-bold text-cyan-300">
-                {s.level}%
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="text-xl font-semibold">{skill.name}</h3>
+              <span className="text-lg font-bold text-cyan">
+                {skill.level}%
               </span>
             </div>
-            <div className="w-full bg-gray-700 rounded-full h-4">
+            <div className="w-full bg-primary/10 rounded-full h-3">
               <div
-                className="bg-gradient-to-r from-cyan-400 to-fuchsia-500 h-4 rounded-full"
-                style={{ width: `${s.level}%` }}
+                className="bg-gradient-to-r from-cyan to-magenta h-3 rounded-full"
+                style={{ width: `${skill.level}%` }}
               />
             </div>
           </motion.div>
