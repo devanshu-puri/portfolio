@@ -1,6 +1,6 @@
 # Neon Cyberpunk Portfolio
 
-![Cyberpunk Portfolio Preview](<img width="1885" height="921" alt="image" src="https://github.com/user-attachments/assets/b736641c-b14e-47aa-98bd-d247ac60b71c" />
+![Cyberpunk Portfolio Preview](<img width="1885" height="921" alt="image" src=./public/preview.jpg" />
 )
 
 > A futuristic, cyberpunk-themed portfolio website designed as an interactive, holographic interface. This project focuses on a high-end user experience, combining a unique boot-up sequence with advanced 3D and scroll-based animations to leave a lasting impression.
