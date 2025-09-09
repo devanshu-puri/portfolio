@@ -1,8 +1,7 @@
-// File: src/components/Skiper31.jsx
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-/* ---------- Character pieces ---------- */
+
 const CharacterV1 = ({ char, index, centerIndex, scrollYProgress }) => {
   const isSpace = char === " ";
   const dist = index - centerIndex;
@@ -39,7 +38,6 @@ const CharacterV3 = ({ char, index, centerIndex, scrollYProgress }) => {
   );
 };
 
-/* ---------- Main component ---------- */
 const Skiper31 = () => {
   const targetRef = useRef(null);
   const targetRef3 = useRef(null);
@@ -51,7 +49,6 @@ const Skiper31 = () => {
   const characters = text.split("");
   const centerIndex = Math.floor(characters.length / 2);
 
-  // requested icons
   const macIcon = [
     "/mac/figma.png",
     "/mac/github.png",
@@ -66,12 +63,10 @@ const Skiper31 = () => {
 
   return (
     <main className="w-full bg-gradient-to-b from-cyan-900 via-purple-900 to-fuchsia-900 text-white">
-      {/* small helper label */}
       <div className="absolute left-1/2 top-8 z-10 -translate-x-1/2 text-center">
         <span className="text-xs uppercase opacity-60">Scroll to see more</span>
       </div>
 
-      {/* Section 1: big animated letters */}
       <section ref={targetRef} className="box-border flex h-[210vh] items-center justify-center p-8">
         <div
           className="max-w-4xl text-center font-bold uppercase tracking-tight"
@@ -89,7 +84,6 @@ const Skiper31 = () => {
         </div>
       </section>
 
-      {/* Section 2: icons with 3D twist (kept) */}
       <section ref={targetRef3} className="relative -mt-[95vh] flex h-[210vh] flex-col items-center justify-center p-8">
         <p className="flex items-center gap-3 text-2xl font-medium tracking-tight text-white mb-6">
           <span className="px-3 py-2 border border-white/10 rounded">[</span>

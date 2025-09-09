@@ -1,9 +1,6 @@
-// File: src/components/Homepage.jsx
-
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 
-// This component is now ONLY the intro section.
 const Homepage = () => {
   return (
     <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">

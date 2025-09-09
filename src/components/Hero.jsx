@@ -1,11 +1,8 @@
-// File: src/components/Hero.jsx
-
 import React from 'react';
 import Tilt from 'react-parallax-tilt';
 
 const Hero = () => {
   return (
-    // This container centers the effect on the screen
     <div className="relative h-screen flex items-center justify-center">
       <div className="halo"></div>
       <Tilt

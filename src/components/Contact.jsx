@@ -1,5 +1,3 @@
-// File: src/components/Contact.jsx
-
 import React from 'react';
 import TextRoll from './TextRoll';
 
@@ -29,7 +27,7 @@ const Contact = () => {
       className="min-h-screen py-32 flex flex-col items-center justify-center text-center"
     >
       <div className="mb-16">
-        {/* THE CHANGE IS HERE: Added transition and hover classes to the title */}
+      
         <h2 
           className="section-title transition-all duration-300 hover:text-magenta hover:drop-shadow-[0_0_20px_theme(colors.magenta)]"
         >
@@ -40,13 +38,13 @@ const Contact = () => {
         </p>
       </div>
 
-      {/* Glassy container */}
+      
       <div className="w-full max-w-6xl p-8 md:p-12 bg-background/50 backdrop-blur-lg border border-cyan/30 rounded-2xl shadow-lg">
         
-        {/* Two-column grid */}
+       
         <div className="grid md:grid-cols-2 gap-16 items-center">
           
-          {/* Column 1: Animated Links */}
+          {/*Column 1*/}
           <div className="flex flex-col items-start text-left">
             <h3 className="text-3xl font-bold text-primary mb-6">Find me on the web:</h3>
             <ul className="flex flex-col gap-4">
@@ -69,7 +67,7 @@ const Contact = () => {
             </ul>
           </div>
 
-          {/* Column 2: Contact Form */}
+          {/*Column 2*/}
           <div>
             <form className="w-full flex flex-col gap-4">
               <input 

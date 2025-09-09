@@ -1,12 +1,9 @@
-// File: src/components/Terminal.jsx
-
 import React, { useState, useEffect, useRef } from 'react';
 
 const Terminal = ({ onStart }) => {
   const [input, setInput] = useState('');
   const inputRef = useRef(null);
 
-  // Automatically focus the input field when the component loads
   useEffect(() => {
     inputRef.current.focus();
   }, []);
@@ -18,9 +15,9 @@ const Terminal = ({ onStart }) => {
   const handleFormSubmit = (e) => {
     e.preventDefault();
     if (input.trim().toLowerCase() === 'start') {
-      onStart(); // Signal to App.jsx to start the portfolio
+      onStart();
     } else {
-      setInput(''); // Clear input if it's wrong
+      setInput(''); 
     }
   };
 

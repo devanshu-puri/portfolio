@@ -1,7 +1,5 @@
-// File: src/components/Projects.jsx
-
 import React from 'react';
-import PeepsAnimation from './PeepsAnimation'; // 1. Import our NEW animation component
+import PeepsAnimation from './PeepsAnimation'; 
 import { motion } from 'framer-motion';
 
 const projectsData = [
@@ -80,7 +78,6 @@ const Projects = () => {
         </div>
       </div>
       
-      {/* 2. Using our NEW, working animation component */}
       <div className="relative w-full h-48 mt-24">
         <PeepsAnimation />
       </div>

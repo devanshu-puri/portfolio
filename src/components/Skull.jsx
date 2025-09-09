@@ -1,11 +1,10 @@
-// File: src/components/Skull.jsx
 import React, { Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import { motion } from "framer-motion-3d";
 
 const SkullModel = () => {
-  const { scene } = useGLTF("/skull.glb"); // since your skull.glb is in /public
+  const { scene } = useGLTF("/skull.glb");
   return <primitive object={scene} scale={2.5} />;
 };
 

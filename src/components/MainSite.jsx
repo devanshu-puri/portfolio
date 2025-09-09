@@ -1,5 +1,3 @@
-// File: src/components/MainSite.jsx
-
 import React, { useRef, useLayoutEffect } from 'react';
 import useSmoothScroll from '../useSmoothScroll';
 import Navbar from './Navbar';
@@ -15,7 +13,6 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-// THE CHANGE IS HERE: Renamed the function from App to MainSite
 const MainSite = () => {
   useSmoothScroll();
   const skullRef = useRef(null);
@@ -43,12 +40,10 @@ const MainSite = () => {
     <div ref={appRef}>
       <Navbar />
 
-      {/* Layer 1: 3D Canvas (fixed in background) */}
       <div className="fixed top-0 left-0 w-full h-screen z-0">
         <Scene3D skullRef={skullRef} />
       </div>
 
-      {/* Layer 2: Scrollable HTML Content (on top) */}
       <div className="relative z-10 scroll-container">
         <Intro />
 
@@ -74,5 +69,4 @@ const MainSite = () => {
   );
 };
 
-// THE CHANGE IS HERE: Export MainSite instead of App
 export default MainSite;

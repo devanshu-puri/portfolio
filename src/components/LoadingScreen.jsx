@@ -1,5 +1,3 @@
-// File: src/components/LoadingScreen.jsx
-
 import React, { useState, useEffect } from 'react';
 
 const LoadingScreen = ({ onComplete }) => {

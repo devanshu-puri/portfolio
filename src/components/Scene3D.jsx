@@ -1,4 +1,3 @@
-// File: src/components/Scene3D.jsx
 import React, { useMemo, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useGLTF } from "@react-three/drei";
@@ -17,7 +16,6 @@ const SkullModel = ({ positionX }) => {
 
   useFrame(() => {
     if (meshRef.current) {
-      // Smooth lerp movement toward target X
       meshRef.current.position.x += (positionX - meshRef.current.position.x) * 0.05;
     }
   });
@@ -43,7 +41,6 @@ const Scene3D = () => {
     }
     requestAnimationFrame(raf);
 
-    // Subscribe to Lenis scroll events
     lenis.on("scroll", ({ scroll }) => {
       const skillsSection = document.getElementById("skills");
       if (!skillsSection) return;
@@ -52,9 +49,9 @@ const Scene3D = () => {
       const windowHeight = window.innerHeight;
 
       if (rect.top < windowHeight && rect.bottom > 0) {
-        setPositionX(-2); // move skull left when skills are in view
+        setPositionX(-2); 
       } else {
-        setPositionX(0); // reset skull to center
+        setPositionX(0); 
       }
     });
 

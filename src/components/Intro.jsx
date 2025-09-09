@@ -1,5 +1,3 @@
-// File: src/components/Intro.jsx
-
 import React from 'react';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
@@ -20,14 +18,12 @@ const Intro = () => {
   return (
     <section className="h-screen flex flex-col items-center justify-start pt-48 md:pt-64 text-center px-6">
       
-      {/* Heading with larger scaling */}
       <h1 className="text-5xl md:text-7xl lg:text-8xl xl:text-9xl font-bold">
         <span className="text-cyan">&gt; </span>
         <span className="text-primary">{text}</span>
         <Cursor cursorStyle='_' />
       </h1>
-      
-      {/* Subheading with larger scaling + highlight */}
+  
       <p className="relative inline-block text-lg md:text-2xl lg:text-3xl xl:text-4xl mt-6 text-primary/90 max-w-5xl leading-relaxed">
         <span className="relative z-10">
           Welcome to my digital space. I specialize in creating modern, responsive, and performant web applications.

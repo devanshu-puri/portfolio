@@ -1,5 +1,3 @@
-// File: src/components/Skills.jsx
-
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -15,13 +13,12 @@ const skillsData = [
 ];
 
 const Skills = () => (
-  // THE CHANGE IS HERE: Removed the gradient background classes
+
   <section
     id="skills"
     className="relative py-32 px-6 md/px-12"
   >
     <div className="max-w-7xl mx-auto text-center">
-      {/* ... (rest of the component is unchanged) ... */}
       <h2
         className="text-5xl md:text-6xl font-extrabold text-primary mb-8 
                    transition-all duration-300 hover:text-magenta 

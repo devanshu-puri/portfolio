@@ -1,26 +1,23 @@
-// File: src/components/PeepsAnimation.jsx
-
 import React, { useCallback } from "react";
 import Particles from "react-tsparticles";
 import { loadSlim } from "tsparticles-slim";
 
 const PeepsAnimation = () => {
-  // This function is called once to load the animation engine
+
   const particlesInit = useCallback(async (engine) => {
     await loadSlim(engine);
   }, []);
 
-  // This is the configuration object that defines our animation
   const particlesOptions = {
     background: {
       color: {
-        value: "transparent", // The background is transparent
+        value: "transparent",
       },
     },
     fpsLimit: 60,
     particles: {
       number: {
-        value: 15, // How many peeps to show at once
+        value: 15,
         density: {
           enable: true,
           value_area: 800,
@@ -29,7 +26,7 @@ const PeepsAnimation = () => {
       shape: {
         type: "image",
         image: {
-          src: "/peep.png", // The path to our new image in the public folder
+          src: "/peep.png", 
           width: 100,
           height: 100,
         },
@@ -38,15 +35,15 @@ const PeepsAnimation = () => {
         value: 1,
       },
       size: {
-        value: { min: 30, max: 50 }, // Peeps will have random sizes
+        value: { min: 30, max: 50 },
       },
       move: {
         enable: true,
-        speed: 2, // How fast they move
-        direction: "left-right", // They will move horizontally
+        speed: 2, 
+        direction: "left-right", 
         random: true,
         straight: true,
-        out_mode: "out", // They will walk off the screen
+        out_mode: "out", 
       },
     },
     detectRetina: true,

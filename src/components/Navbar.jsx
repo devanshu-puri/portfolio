@@ -1,5 +1,3 @@
-// File: src/components/Navbar.jsx
-
 import React, { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -9,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white/20 backdrop-blur-lg shadow-md">
       <div className="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center py-4">
-        {/* Left: Logo */}
+
         <a href="#home" className="cursor-pointer flex items-center">
           <img
             src="/dev2.png"
@@ -18,7 +16,6 @@ const Navbar = () => {
           />
         </a>
 
-        {/* Center: Intro, Skills, Projects */}
         <div className="hidden md:flex items-center gap-10">
           {["Intro", "Skills", "Projects"].map((item) => (
             <a
@@ -32,7 +29,6 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Right: Contact */}
         <div className="hidden md:flex items-center">
           <a
             href="#contact"
@@ -43,7 +39,6 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-gray-200 transition"
           onClick={() => setIsOpen(!isOpen)}
@@ -52,7 +47,6 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
       {isOpen && (
         <div className="md:hidden bg-white/90 backdrop-blur-lg shadow-lg">
           <div className="flex flex-col items-center gap-4 py-6">
