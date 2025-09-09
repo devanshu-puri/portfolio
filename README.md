@@ -10,15 +10,29 @@
 
 This portfolio isn’t just a static page — it’s an interactive playground where design, motion, and code fuse together. Each system is crafted to create an immersive journey for anyone who visits.
 
-🚀 Feature Overview
-⚙️ System	🔍 What It Does
-👾 Immersive Boot Sequence	Launches with a custom ASCII-art loader and interactive terminal. Visitors must enter the right command to unlock the portfolio — a nod to retro hacking consoles.
-🌀 3D Scroll-Link Engine	A central 3D model syncs with your scroll. Powered by GSAP ScrollTrigger, it rotates, shifts, and reacts in real-time as you move down the page.
-💧 Fluid Scroll Physics	Integrated with Lenis for a buttery-smooth scrolling experience. Every animation feels natural, almost liquid.
-🔮 Glassmorphism UI	Sections float on translucent glass panels with soft blur, creating depth against a living, animated 3D background.
-⚡ Neon & Glitch FX	UI cards glow with neon edges, while the contact button has a signature glitch animation for that cyberpunk, retro-tech vibe.
-🎬 Interactive Components	From rolling hover-text links to animated progress bars, Framer Motion breathes life into every interaction.
-📱 Seamless Responsiveness	Built with a mobile-first mindset. Whether on a widescreen monitor or a phone, the experience adapts without losing its magic.
+## 🚀 Feature Overview
+
+- 👾 **Immersive Boot Sequence**  
+  Custom ASCII-art loader + interactive terminal. Visitors must type the *right command* to unlock the portfolio — a nod to retro hacking consoles.  
+
+- 🌀 **3D Scroll-Link Engine**  
+  A central 3D model syncs with your scroll. Powered by **GSAP ScrollTrigger**, it rotates, shifts, and reacts in real-time as you move down the page.  
+
+- 💧 **Fluid Scroll Physics**  
+  Integrated with **Lenis** for buttery-smooth scrolling. Every animation feels natural, almost liquid.  
+
+- 🔮 **Glassmorphism UI**  
+  Content sections float on translucent glass panels with soft blur, creating depth against a dynamic 3D background.  
+
+- ⚡ **Neon & Glitch FX**  
+  UI cards glow with neon edges, while the contact button features a signature *glitch animation* for that cyberpunk vibe.  
+
+- 🎬 **Interactive Components**  
+  From rolling hover-text links to animated progress bars, **Framer Motion** makes every interaction feel alive.  
+
+- 📱 **Seamless Responsiveness**  
+  Mobile-first design ensures a flawless experience on any device, from widescreen monitors to smartphones.  
+
 ---
 
 ## 🛠️ Tech Stack & Tools
