@@ -1,24 +1,24 @@
 # Neon Cyberpunk Portfolio
 
-![Cyberpunk Portfolio Preview](<img width="1885" height="921" alt="image" src="./public/preview.jpg" />
-)
+![Cyberpunk Portfolio Preview](./public/preview.jpg)
 
 > A futuristic, cyberpunk-themed portfolio website designed as an interactive, holographic interface. This project focuses on a high-end user experience, combining a unique boot-up sequence with advanced 3D and scroll-based animations to leave a lasting impression.
 
 **Live Site:**=(https://portfolio-ten-sepia-89.vercel.app/)  <!-- 👈 -->
 
-## ✨ Core Features
+##✨ Core Systems & Features
 
-This is not just a portfolio; it's an experience. The project is built with a focus on creating a memorable and distinct user journey from the moment the page loads.
+This portfolio isn’t just a static page — it’s an interactive playground where design, motion, and code fuse together. Each system is crafted to create an immersive journey for anyone who visits.
 
-* **👾 Immersive Boot-Up Sequence:** The site initializes with a custom ASCII art loading screen, followed by an interactive terminal prompt that grants access to the main portfolio.
-* **🌀 Advanced Scroll-Based 3D Animation:** A true 3D model serves as the central visual anchor, dynamically animating its position and rotation based on the user's scroll progress using GSAP's ScrollTrigger.
-* ** buttery-Smooth Scrolling:** Integrated with **Lenis** for a premium, fluid scrolling experience that enhances the feel of all animations.
-* **🔮 Glassmorphism UI:** Content sections are presented on semi-transparent, blurry "glass" panels, creating a sense of depth against the dynamic 3D background.
-* **Neon & Glitch Effects:** Features neon glow hover effects on skill cards and a signature "glitch" animation on the contact form button.
-* **Interactive Components:** Includes a "TextRoll" hover effect for contact links and animated progress bars for the skills matrix, all powered by **Framer Motion**.
-* **Fully Responsive:** A mobile-first design ensures a seamless and visually stunning experience across all devices, from desktops to smartphones.
-
+🚀 Feature Overview
+⚙️ System	🔍 What It Does
+👾 Immersive Boot Sequence	Launches with a custom ASCII-art loader and interactive terminal. Visitors must enter the right command to unlock the portfolio — a nod to retro hacking consoles.
+🌀 3D Scroll-Link Engine	A central 3D model syncs with your scroll. Powered by GSAP ScrollTrigger, it rotates, shifts, and reacts in real-time as you move down the page.
+💧 Fluid Scroll Physics	Integrated with Lenis for a buttery-smooth scrolling experience. Every animation feels natural, almost liquid.
+🔮 Glassmorphism UI	Sections float on translucent glass panels with soft blur, creating depth against a living, animated 3D background.
+⚡ Neon & Glitch FX	UI cards glow with neon edges, while the contact button has a signature glitch animation for that cyberpunk, retro-tech vibe.
+🎬 Interactive Components	From rolling hover-text links to animated progress bars, Framer Motion breathes life into every interaction.
+📱 Seamless Responsiveness	Built with a mobile-first mindset. Whether on a widescreen monitor or a phone, the experience adapts without losing its magic.
 ---
 
 ## 🛠️ Tech Stack & Tools
@@ -40,11 +40,11 @@ This project was built using a modern, high-performance tech stack designed for 
 ---
 
 **Install all the necessary NPM packages:**
-    ```sh
+    ```
     npm install
     ```
 **Run the development server:**
-    ```sh
+    ```
     npm run dev
     ```
 ## 📧 Contact
